@@ -1,0 +1,20 @@
+{% extends 'members/base.html' %}
+
+{% block content %}
+
+<head>
+    <title>Friendship Bridge</title>
+</head>
+
+<H2>Outer Core Members</H2>
+
+<ul>
+    {% for member in members %}
+        <li>
+            <a href="{% url 'member_detail' pk=member.pk %}">{{ member.last_name }} , {{ member.first_name }}</a>
+            <!-- <a href="{% url 'member_delete' pk=member.pk %}" class="delete">x</a> -->
+        </li>
+    {% endfor%}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'members/base.html' %}
+
+{% block content %}
+
+
+<h2>Last Name: {{ member.last_name }} <a href="{% url 'member_edit' pk=member.pk %} ">(edit)</a></h2>
+<h2>First Name: {{ member.first_name }} </h2>
+<h3>Email: {{ member.email }} </h2>
+<h3>Phone 1: {{ member.phone1 }} </h2>
+<h3>Phone 2: {{ member.phone2 }} </h2>
+<h3>Address 1: {{ member.address1 }} </h2>
+<h3>Address 2: {{ member.address2 }} </h2>
+<h3>City: {{ member.city }} </h2>
+<h3>Zip: {{ member.zipcode }} </h2>
+<p>Notes: {{ member.notes }} </p>
+<h3>Member Type: {{ member.member_type }}</h3>
+<!-- <form action="" method="post">{% csrf_token %}
+    {{ form.as_p }} -->
+</form>
+
+
+{% endblock %}
