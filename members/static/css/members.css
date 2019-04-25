@@ -101,3 +101,11 @@ a.no-fav {
 .no-fav:visited {
     text-decoration: none;
 }
+
+.hidden {
+    display:none;
+}
+
+#hidden {
+    display:none;
+}

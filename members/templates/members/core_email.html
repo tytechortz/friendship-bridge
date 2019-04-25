@@ -1,0 +1,19 @@
+{% extends 'members/base.html' %}
+
+{% block content %}
+
+<head>
+        <title>Friendship Bridge</title>
+</head>
+
+<ul>
+        {% for member in members %}
+            <li>
+                 {{ member.email }} 
+            </li>
+        {% endfor%}
+</ul>
+
+
+
+{% endblock %}

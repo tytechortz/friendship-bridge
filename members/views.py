@@ -1,10 +1,31 @@
 from django.shortcuts import render, redirect, HttpResponse
 from .models import Member
 from .forms import MemberForm
+from tablib import Dataset
+
+
 
 # Create your views here.
 
+def simple_upload(request):
+    if request.method == 'POST':
+        member_resource = MemberResource()
+        dataset = Dataset()
+        new_members = request.FILES['myfile']
 
+        imported_data = dataset.load(new_memberss.read())
+        result = member_resource.import_data(dataset, dry_run=True)  # Test the data import
+
+        if not result.has_errors():
+            member_resource.import_data(dataset, dry_run=False)  # Actually import now
+
+    return render(request, 'core/simple_upload.html')
+
+
+def core_email(request):
+    core_email = Member.objects.filter(member_type='Core')
+    print(core_email)
+    return render(request, 'members/core_members.html', {'members': core_email})
 
 def core_members(request):
     core_members = Member.objects.filter(member_type='Core')

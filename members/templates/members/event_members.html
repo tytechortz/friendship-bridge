@@ -1,12 +1,14 @@
 {% extends 'members/base.html' %}
 
 {% block content %}
-
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
 <head>
     <title>Friendship Bridge</title>
 </head>
 
 <h2>Event Members</h2>
+<button type="button" id="emailButton">Email</button>
+
 
 <ul>
     {% for member in members %}
@@ -16,5 +18,29 @@
         </li>
     {% endfor%}
 </ul>
+
+<script type='text/javascript'>
+    $("#emailButton").click(function(){
+    $(".hidden").toggle();
+    });
+
+</script>
+
+
+<textarea class='hidden'>
+{% for member in members %}
+    {{ member.email }}
+{% endfor%}
+</textarea>
+                
+        
+<script>
+$("button").click(function(){
+    $("textarea").select();
+    document.execCommand('copy');
+});
+        
+</script>
+
 
 {% endblock %}
